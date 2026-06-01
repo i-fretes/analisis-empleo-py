@@ -1,36 +1,33 @@
- # Análisis de Empleos Tech en Paraguay 🇵🇾
+# 📊 Analizador de Mercado Tech - Paraguay (`Junior/Trainee`)
 
-## 🎯 Objetivo del Proyecto
-Este proyecto nace de una problemática real: los desarrolladores Junior/Trainee muchas veces no saben qué tecnologías priorizar para insertarse en el mercado laboral local. 
+¡Bienvenido! Este es un proyecto de grado profesional diseñado para trackear, limpiar y analizar las ofertas de empleo tecnológico en el mercado paraguayo, enfocado específicamente en los requerimientos para perfiles **Junior** y **Trainee**. 
 
-El objetivo es procesar y analizar ofertas de empleo tecnológico en Paraguay para identificar de forma basada en datos cuáles son las herramientas más demandadas, las modalidades de trabajo predominantes (Remoto/Híbrido/Presencial) y presentar los resultados de forma visual.
-
----
-
-## 🛠️ Tecnologías Utilizadas
-* **Python** (Lógica de estructuración de datos y normalización de texto)
-* **Pandas** (Manipulación avanzada de datos, limpieza y análisis estadístico)
-* **Matplotlib** (Generación de reportes visuales y gráficos de barras)
+El sistema transforma descripciones de puestos de trabajo desestructuradas en métricas visuales limpias, implementando una arquitectura desacoplada y un pipeline de datos interactivo.
 
 ---
 
-## 📈 Resultados del Análisis Inicial (Piloto)
-
-A partir de un set de datos de prueba basado en ofertas del mercado local, se procesaron las descripciones de los puestos (normalizando el texto a minúsculas para evitar duplicados por tipeo) y se extrajeron las siguientes conclusiones:
-
-### 1. Top Tecnologías Demandadas
-Según el conteo automatizado, **Python** y **SQL** lideran el requerimiento de los reclutadores para perfiles Backend y de Datos, seguidos por librerías de análisis como **Pandas**.
-
-### 2. Visualización de Datos
-El script genera automáticamente un reporte gráfico que se guarda localmente como `ranking_tecnologias.png`:
-
-![Ranking de Tecnologías](ranking_tecnologias.png)
+## 🚀 Características Principales (Factor "Wow")
+* **Arquitectura Modular:** Separación estricta de responsabilidades (Clean Architecture).
+* **Análisis Vectorizado:** Procesamiento eficiente de tecnologías usando **Pandas** (`.explode()`, `.value_counts()`).
+* **Robustez Empresarial (Error Handling):** Control de excepciones activo (`try-except`) contra bloqueos de archivos del Sistema Operativo (`PermissionError`).
+* **Dual-Interface:** Selector de ejecución mediante **Menú Interactivo de Consola** o un **Dashboard Web Interactivo** moderno con **Streamlit**.
+* **Persistencia Local:** Exportación automatizada de reportes tabulados directamente a formatos compatibles con Excel (`.csv`).
 
 ---
 
-## 🚀 Cómo Ejecutar el Proyecto
+## 📁 Arquitectura y Estructura del Sistema
 
-1. Clonar el repositorio.
-2. Instalar las dependencias necesarias ejecutando en la terminal:
-   ```bash
-   pip install pandas matplotlib
+El software se diseñó bajo el principio de **Responsabilidad Única**, dividiendo el flujo en módulos independientes:
+
+* 🗄️ **`datos.py` (Capa de Datos):** Gestiona la consistencia de la data cruda estructurada en diccionarios nativos.
+* ⚙️ **`procesador.py` (Lógica de Negocio):** Realiza la limpieza, normalización de texto (*Case Normalization*) y transformaciones analíticas con Pandas.
+* 💾 **`almacenamiento.py` (Capa de Persistencia):** Maneja la escritura en disco y funciona como escudo contra fallos de entorno si el usuario tiene los archivos abiertos.
+* 🌐 **`app.py` (Frontend / Presentación Web):** Levanta un servidor gráfico interactivo con filtros, tablas dinámicas y descargas nativas usando Streamlit.
+* 🚀 **`main.py` (Orquestador de Consola):** Mantiene un bucle infinito controlado (`while True`) para ejecutar el sistema directamente desde la terminal.
+
+---
+
+## 🛠️ Tecnologías y Librerías Utilizadas
+* **Python 3.x** (Lenguaje Core)
+* **Pandas** (Data Manipulation & Analytics)
+* **Matplotlib
