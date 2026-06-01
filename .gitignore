@@ -1,0 +1,8 @@
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Archivos de datos generados localmente (No queremos saturar GitHub con datos que el código ya genera)
+resultado_mercado.csv
+reporte_mercado_py.csv
+*.png
